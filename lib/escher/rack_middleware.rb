@@ -28,8 +28,6 @@ module Escher
       @app.call(request_env)
     end
 
-    protected
-
     def authorize_path?(path)
       # if no included or excluded paths are defined in config, default to all
       # routes being authorized
