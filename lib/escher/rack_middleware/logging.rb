@@ -1,20 +1,24 @@
-module Escher::RackMiddleware::Logging
+module Escher
+  module RackMiddleware
+    module Logging
 
-  require 'escher/rack_middleware/logging/helper'
+      require 'escher/rack_middleware/logging/helper'
 
-  def self.extended(klass)
-    klass.__send__(:include,Helper)
+      def self.extended(klass)
+        klass.__send__(:include,Helper)
+      end
+
+      def logger=(logger)
+        @logger=logger
+      end
+
+      def logger
+        @logger ||= -> {
+          require 'logger'
+          Logger.new(STDOUT)
+        }.call
+      end
+
+    end
   end
-
-  def logger=(logger)
-    @logger=logger
-  end
-
-  def logger
-    @logger ||= -> {
-      require 'logger'
-      Logger.new(STDOUT)
-    }.call
-  end
-
 end

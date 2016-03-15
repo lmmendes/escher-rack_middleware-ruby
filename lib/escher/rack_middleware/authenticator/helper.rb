@@ -1,4 +1,7 @@
-module Escher::RackMiddleware::Authenticator::Helper
+module Escher
+  module RackMiddleware
+    module Authenticator
+      module Helper
 
   def escher_authenticators
     self.class.escher_authenticators
@@ -27,4 +30,7 @@ module Escher::RackMiddleware::Authenticator::Helper
 
   end
 
+      end
+    end
+  end
 end
