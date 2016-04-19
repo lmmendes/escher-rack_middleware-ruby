@@ -1,7 +1,6 @@
 # coding: utf-8
 
-# lib = File.expand_path('../lib', __FILE__)
-# $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+$:.push File.expand_path("../lib", __FILE__)
 
 require 'escher/rack_middleware/version'
 
